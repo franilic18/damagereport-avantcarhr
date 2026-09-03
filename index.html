@@ -6,90 +6,233 @@
 <title>AVANT CAR – Damage Report</title>
 <style>
 :root{
-  --black:#0b0d0c; --green:#b8d9c2; --green-dark:#83ad91;
-  --mint:#eaf2ec; --cream:#f5f7f5; --text:#111412;
-  --muted:#68716b; --line:#d9e1db;
+  --avant-green:#73c43f;
+  --avant-green-2:#8bd84c;
+  --avant-dark:#0a0c09;
+  --mint:#eef5ef;
+  --white:#fff;
+  --text:#111411;
+  --muted:#69736c;
+  --line:#d9e2db;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:var(--mint);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}
-header{
-  height:82px;background:var(--black);color:#fff;display:flex;align-items:center;
-  justify-content:space-between;padding:0 6vw;border-bottom:3px solid var(--green)
+body{
+  background:var(--mint);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
 }
-.brand{font-size:30px;font-weight:900;letter-spacing:1.8px;line-height:1}
-.brand span{font-weight:400}
-.brand-sub{font-size:13px;font-weight:700;color:#fff;letter-spacing:.2px}
+
+/* Large green Avant Car hero */
+header{
+  position:relative;
+  height:330px;
+  padding:0 5.8vw;
+  background:linear-gradient(120deg,#68b936 0%,#79c83e 48%,#8bd84c 100%);
+  color:#fff;
+  border:0;
+  overflow:hidden;
+  display:block;
+}
+header:after{
+  content:"avantcar";
+  position:absolute;
+  left:8vw;
+  bottom:-54px;
+  color:rgba(255,255,255,.78);
+  font-size:180px;
+  line-height:.8;
+  font-weight:800;
+  letter-spacing:-9px;
+  white-space:nowrap;
+}
+.header-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-top:18px;
+}
+.logo{
+  width:278px;
+  height:auto;
+  object-fit:contain;
+}
+.nav{
+  display:flex;
+  gap:46px;
+  padding-top:14px;
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.nav span{white-space:nowrap}
+
+/* White portal sheet overlapping the hero */
 .card{
-  max-width:1050px;margin:46px auto 70px;padding:48px 58px 62px;background:#fff;
-  box-shadow:0 14px 45px rgba(11,13,12,.08)
+  position:relative;
+  z-index:3;
+  max-width:1160px;
+  margin:-75px auto 70px;
+  background:#fff;
+  padding:48px 70px 70px;
+  box-shadow:0 20px 55px rgba(24,55,31,.13);
+  min-height:620px;
 }
 .progress{
-  display:flex;align-items:center;justify-content:space-between;font-size:12px;
-  color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  margin-bottom:12px;
 }
-.bar{height:5px;background:#e8eee9;overflow:hidden}
-.fill{height:100%;background:var(--green-dark);width:14%;transition:.25s}
-h1{font-size:58px;line-height:.98;margin:52px 0 16px;letter-spacing:-2.5px;font-weight:800;max-width:800px}
-.sub{color:var(--muted);font-size:18px;line-height:1.55;margin-bottom:34px;max-width:720px}
-label{display:block;font-size:13px;font-weight:800;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.5px}
+.progress span:nth-child(2){color:var(--text)}
+.progress span:nth-child(3){margin-left:auto}
+.bar{height:5px;background:#e4ebe5;overflow:hidden}
+.fill{height:100%;background:var(--avant-green);width:14%;transition:.25s}
+
+.eyebrow{
+  margin-top:44px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+h1{
+  margin:24px 0 14px;
+  max-width:880px;
+  font-size:64px;
+  line-height:.94;
+  letter-spacing:-3.2px;
+  font-weight:800;
+}
+.sub{
+  max-width:760px;
+  margin:0 0 38px;
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.55;
+}
+.langs{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  max-width:820px;
+}
+.langs button{
+  min-height:82px;
+  padding:20px 26px;
+  background:#fff;
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:0;
+  text-align:left;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+}
+.langs button:hover{background:#f0f7f1;border-color:#91bd9d}
+.langs button.active{background:var(--avant-dark);color:#fff;border-color:var(--avant-dark)}
+
+label{
+  display:block;
+  margin:26px 0 9px;
+  color:#303832;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
 input,select,textarea{
-  width:100%;padding:17px 18px;border:1px solid var(--line);border-radius:0;
-  font:inherit;background:#fff;color:var(--text)
+  width:100%;
+  padding:17px 18px;
+  background:#fff;
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:0;
+  font:inherit;
 }
 input:focus,select:focus,textarea:focus{
-  outline:none;border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(131,173,145,.15)
+  outline:none;
+  border-color:var(--avant-green);
+  box-shadow:0 0 0 3px rgba(115,196,63,.14);
 }
-textarea{min-height:150px;resize:vertical}
+textarea{min-height:155px;resize:vertical}
 button{
-  padding:17px 24px;border:1px solid var(--black);border-radius:0;background:var(--black);
-  color:#fff;font-size:15px;font-weight:800;cursor:pointer;letter-spacing:.1px;transition:.15s ease
+  border:1px solid var(--avant-dark);
+  border-radius:0;
+  padding:17px 26px;
+  background:var(--avant-dark);
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.15s;
 }
-button:hover{transform:translateY(-1px);background:#202320}
-.secondary{background:#fff;color:var(--black);border-color:#cbd5ce}
-.secondary:hover{background:var(--cream)}
-.full{width:100%;margin-top:22px}
-.actions{display:flex;gap:14px;margin-top:38px}
+button:hover{transform:translateY(-1px);background:#222622}
+.secondary{background:#fff;color:var(--avant-dark);border-color:#cbd5ce}
+.secondary:hover{background:#f2f6f2}
+.full{width:100%;margin-top:26px}
+.actions{display:flex;gap:14px;margin-top:42px}
 .actions button{flex:1}
-.langs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:720px}
-.langs button{
-  min-height:76px;background:#fff;color:var(--black);border:1px solid var(--line);
-  text-align:left;padding:18px 22px;font-size:17px
-}
-.langs button:hover{background:var(--mint);border-color:var(--green-dark)}
-.langs button.active{background:var(--black);color:#fff;border-color:var(--black)}
-.helpbox{padding:24px 26px;background:var(--cream);border-left:5px solid var(--green-dark);line-height:1.65;margin-bottom:20px}
-.summary{background:var(--cream);padding:20px 24px}
-.summary div{padding:14px 0;border-bottom:1px solid var(--line)}
-.summary div:last-child{border:0}
-.summary b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:5px}
-.status{margin-top:12px;color:#a4001a;font-size:14px;min-height:20px}
-.success{text-align:center;padding:70px 5px}
+.helpbox{padding:25px 28px;background:#f0f6f1;border-left:5px solid var(--avant-green);line-height:1.65;margin-bottom:20px}
+.summary{padding:22px 26px;background:#f0f6f1}
+.summary div{padding:15px 0;border-bottom:1px solid var(--line)}
+.summary div:last-child{border-bottom:0}
+.summary b{display:block;margin-bottom:5px;color:var(--muted);font-size:11px;letter-spacing:.8px;text-transform:uppercase}
+.status{min-height:20px;margin-top:12px;color:#a4001a;font-size:14px}
+.success{text-align:center;padding:85px 10px}
 .hidden{display:none!important}
 .photo-preview{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.photo-preview img{width:92px;height:92px;object-fit:cover;border-radius:0;border:1px solid var(--line)}
-a{text-decoration:none}
-@media(max-width:800px){
-  header{padding:0 22px;height:74px}.brand{font-size:24px}.brand-sub{font-size:11px}
-  .card{margin:20px 14px 40px;padding:30px 22px 42px}
-  h1{font-size:42px;margin-top:38px;letter-spacing:-1.6px}.sub{font-size:16px}
+.photo-preview img{width:96px;height:96px;object-fit:cover;border:1px solid var(--line);border-radius:0}
+
+@media(max-width:850px){
+  header{height:250px;padding:0 22px}
+  header:after{font-size:115px;bottom:-28px;left:5vw}
+  .logo{width:205px}
+  .nav{gap:20px;font-size:13px}
+  .card{margin:-45px 14px 30px;padding:30px 24px 46px}
+  h1{font-size:47px;letter-spacing:-2px}
+  .sub{font-size:17px}
 }
-@media(max-width:520px){
-  .langs{grid-template-columns:1fr}.actions{flex-direction:column}h1{font-size:36px}
+@media(max-width:560px){
+  header{height:205px}
+  .header-inner{padding-top:14px}
+  .logo{width:170px}
+  .nav{gap:10px;font-size:10px;flex-direction:column;align-items:flex-end}
+  header:after{font-size:76px;bottom:-15px}
+  .langs{grid-template-columns:1fr}
+  .actions{flex-direction:column}
+  h1{font-size:39px}
+  .card{margin:-30px 10px 20px;padding:25px 19px 38px}
 }
 </style>
 </head>
 <body>
 <header>
-  <div class="brand"><span>AVANT</span> CAR</div>
-  <div class="brand-sub" id="brandSub">Prijava štete na vozilu</div>
+  <div class="header-inner">
+    <img class="logo" src="./avantcar-logo.png" alt="Avantcar">
+    <div class="nav">
+      <span>POSLOVNI NAJAM</span>
+      <span>CAR SHARING</span>
+    </div>
+  </div>
 </header>
 <div class="card">
 <div class="progress"><span id="stepLabel"></span> <span id="num">1</span> <span id="of"></span> 7</div>
 <div class="bar"><div class="fill" id="fill"></div></div>
 
 <section id="step1">
-<div style="margin-top:34px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#68716b">AVANT CAR / DAMAGE REPORT</div>
+<div class="eyebrow">AVANT CAR / DAMAGE REPORT</div>
 <h1 id="s1t"></h1><div class="sub" id="s1d"></div>
 <div class="langs">
 <button id="lang-hr" onclick="setLang('hr')">🇭🇷 Hrvatski</button>
@@ -103,7 +246,7 @@ a{text-decoration:none}
 
 <section id="step2" class="hidden">
 <h1 id="s2t"></h1><div class="sub" id="s2d"></div><div class="helpbox" id="helpbox"></div>
-<a href="./upute.jpg" target="_blank" rel="noopener" class="full" style="display:block"><button style="width:100%" id="openHelp" type="button"></button></a>
+<a href="./upute.jpg" target="_blank" rel="noopener" style="display:block"><button class="full" id="openHelp" type="button" style="width:100%"></button></a>
 <div class="actions"><button class="secondary" id="back2" onclick="prev()"></button><button id="next2" onclick="next()"></button></div>
 </section>
 

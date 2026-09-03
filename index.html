@@ -2,195 +2,239 @@
 <html lang="hr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AVANT CAR | Damage Report</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AVANT CAR – Damage Report</title>
 <style>
 :root{
-  --black:#0b0d0c;
-  --green:#b7d8c0;
-  --green-dark:#7fad8e;
-  --cream:#f5f7f5;
-  --text:#151716;
-  --muted:#68716b;
-  --line:#d9e0db;
+  --black:#0b0d0c; --green:#b8d9c2; --green-dark:#83ad91;
+  --mint:#eaf2ec; --cream:#f5f7f5; --text:#111412;
+  --muted:#68716b; --line:#d9e1db;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--text);font-family:Arial,Helvetica,sans-serif}
-header{background:var(--black);color:#fff;border-bottom:5px solid var(--green)}
-.nav{max-width:1180px;margin:auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:29px;letter-spacing:2px;font-weight:800}
-.logo span{font-weight:300}
-.navtext{font-size:13px;color:var(--green);font-weight:700}
-.wrap{max-width:900px;margin:auto;padding:34px 24px 70px}
-.progress-row{display:flex;justify-content:space-between;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:800;margin-bottom:9px}
-.bar{height:5px;background:#e9edea}.fill{height:100%;background:var(--green-dark);transition:.25s}
-.card{padding:10px 0}
-h1{font-size:48px;line-height:1.02;letter-spacing:-1.8px;margin:45px 0 12px;max-width:760px}
-.lead{font-size:17px;line-height:1.55;color:var(--muted);max-width:690px;margin-bottom:32px}
-.langs{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:10px}
-button{font:inherit;font-weight:800;cursor:pointer}
-.langs button{padding:17px;text-align:left;border:1px solid var(--line);background:#fff;color:var(--text);border-radius:2px}
-.langs button.active{background:var(--black);border-color:var(--black);color:#fff}
-.primary{width:100%;padding:17px 20px;border:1px solid var(--black);background:var(--black);color:#fff;border-radius:2px}
-.secondary{padding:17px 20px;border:1px solid var(--line);background:#fff;color:var(--black);border-radius:2px}
-.primary:hover{background:#242624}.secondary:hover{background:var(--cream)}
-label{display:block;font-size:14px;font-weight:800;margin:23px 0 8px}
-input,select,textarea{width:100%;font:inherit;font-size:16px;padding:15px;border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--text)}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green-dark);box-shadow:0 0 0 3px #7fad8e22}
-textarea{min-height:130px;resize:vertical}
-.help{background:var(--cream);border-left:5px solid var(--green-dark);padding:21px;line-height:1.6;margin:25px 0}
-a{color:inherit;text-decoration:none}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}
-.error{min-height:21px;color:#a4001a;font-size:14px;margin-top:12px;font-weight:700}
-.preview{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
-.preview img{width:86px;height:86px;object-fit:cover;border:1px solid var(--line);border-radius:2px}
-.review{background:var(--cream);padding:18px}
-.review div{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.45}
-.review div:last-child{border:0}
-.review strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:4px}
-.success{text-align:center;padding:75px 0}
-.success-mark{font-size:52px;font-weight:900}
+html,body{margin:0;padding:0}
+body{background:var(--mint);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+header{
+  height:82px;background:var(--black);color:#fff;display:flex;align-items:center;
+  justify-content:space-between;padding:0 6vw;border-bottom:3px solid var(--green)
+}
+.brand{font-size:30px;font-weight:900;letter-spacing:1.8px;line-height:1}
+.brand span{font-weight:400}
+.brand-sub{font-size:13px;font-weight:700;color:#fff;letter-spacing:.2px}
+.card{
+  max-width:1050px;margin:46px auto 70px;padding:48px 58px 62px;background:#fff;
+  box-shadow:0 14px 45px rgba(11,13,12,.08)
+}
+.progress{
+  display:flex;align-items:center;justify-content:space-between;font-size:12px;
+  color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800
+}
+.bar{height:5px;background:#e8eee9;overflow:hidden}
+.fill{height:100%;background:var(--green-dark);width:14%;transition:.25s}
+h1{font-size:58px;line-height:.98;margin:52px 0 16px;letter-spacing:-2.5px;font-weight:800;max-width:800px}
+.sub{color:var(--muted);font-size:18px;line-height:1.55;margin-bottom:34px;max-width:720px}
+label{display:block;font-size:13px;font-weight:800;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.5px}
+input,select,textarea{
+  width:100%;padding:17px 18px;border:1px solid var(--line);border-radius:0;
+  font:inherit;background:#fff;color:var(--text)
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(131,173,145,.15)
+}
+textarea{min-height:150px;resize:vertical}
+button{
+  padding:17px 24px;border:1px solid var(--black);border-radius:0;background:var(--black);
+  color:#fff;font-size:15px;font-weight:800;cursor:pointer;letter-spacing:.1px;transition:.15s ease
+}
+button:hover{transform:translateY(-1px);background:#202320}
+.secondary{background:#fff;color:var(--black);border-color:#cbd5ce}
+.secondary:hover{background:var(--cream)}
+.full{width:100%;margin-top:22px}
+.actions{display:flex;gap:14px;margin-top:38px}
+.actions button{flex:1}
+.langs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:720px}
+.langs button{
+  min-height:76px;background:#fff;color:var(--black);border:1px solid var(--line);
+  text-align:left;padding:18px 22px;font-size:17px
+}
+.langs button:hover{background:var(--mint);border-color:var(--green-dark)}
+.langs button.active{background:var(--black);color:#fff;border-color:var(--black)}
+.helpbox{padding:24px 26px;background:var(--cream);border-left:5px solid var(--green-dark);line-height:1.65;margin-bottom:20px}
+.summary{background:var(--cream);padding:20px 24px}
+.summary div{padding:14px 0;border-bottom:1px solid var(--line)}
+.summary div:last-child{border:0}
+.summary b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:5px}
+.status{margin-top:12px;color:#a4001a;font-size:14px;min-height:20px}
+.success{text-align:center;padding:70px 5px}
 .hidden{display:none!important}
-@media(max-width:700px){
-  .nav{padding:19px}.logo{font-size:23px}.navtext{font-size:11px}
-  .wrap{padding:25px 18px 50px}
-  h1{font-size:37px;letter-spacing:-1.2px;margin-top:34px}
-  .langs{grid-template-columns:1fr}
-  .actions{grid-template-columns:1fr}
+.photo-preview{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.photo-preview img{width:92px;height:92px;object-fit:cover;border-radius:0;border:1px solid var(--line)}
+a{text-decoration:none}
+@media(max-width:800px){
+  header{padding:0 22px;height:74px}.brand{font-size:24px}.brand-sub{font-size:11px}
+  .card{margin:20px 14px 40px;padding:30px 22px 42px}
+  h1{font-size:42px;margin-top:38px;letter-spacing:-1.6px}.sub{font-size:16px}
+}
+@media(max-width:520px){
+  .langs{grid-template-columns:1fr}.actions{flex-direction:column}h1{font-size:36px}
 }
 </style>
 </head>
 <body>
-<header><div class="nav"><div class="logo"><span>AVANT</span> CAR</div><div class="navtext" id="brandSub"></div></div></header>
-<div class="wrap">
-<div class="progress-row"><span id="stepText"></span><span><span id="stepNo">1</span> / 7</span></div>
-<div class="bar"><div class="fill" id="fill"></div></div>
+<header>
+  <div class="brand"><span>AVANT</span> CAR</div>
+  <div class="brand-sub" id="brandSub">Prijava štete na vozilu</div>
+</header>
 <div class="card">
+<div class="progress"><span id="stepLabel"></span> <span id="num">1</span> <span id="of"></span> 7</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
 
-<section id="s1">
-<h1 id="t1"></h1><p class="lead" id="d1"></p>
+<section id="step1">
+<div style="margin-top:34px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#68716b">AVANT CAR / DAMAGE REPORT</div>
+<h1 id="s1t"></h1><div class="sub" id="s1d"></div>
 <div class="langs">
-<button id="lh" onclick="setLang('hr')">🇭🇷 Hrvatski</button>
-<button id="le" onclick="setLang('en')">🇬🇧 English</button>
-<button id="ld" onclick="setLang('de')">🇩🇪 Deutsch</button>
-<button id="li" onclick="setLang('it')">🇮🇹 Italiano</button>
-<button id="lf" onclick="setLang('fr')">🇫🇷 Français</button>
+<button id="lang-hr" onclick="setLang('hr')">🇭🇷 Hrvatski</button>
+<button id="lang-en" onclick="setLang('en')">🇬🇧 English</button>
+<button id="lang-de" onclick="setLang('de')">🇩🇪 Deutsch</button>
+<button id="lang-it" onclick="setLang('it')">🇮🇹 Italiano</button>
+<button id="lang-fr" onclick="setLang('fr')">🇫🇷 Français</button>
 </div>
-<button class="primary" style="margin-top:20px" id="n1" onclick="next()">Nastavi</button>
+<button class="full" id="next1" onclick="next()"></button>
 </section>
 
-<section id="s2" class="hidden">
-<h1 id="t2"></h1><p class="lead" id="d2"></p><div class="help" id="help"></div>
-<button class="primary" id="open" onclick="openInstructions()" type="button"></button>
-<div class="actions"><button class="secondary" id="b2" onclick="prev()"></button><button class="primary" id="n2" onclick="next()"></button></div>
+<section id="step2" class="hidden">
+<h1 id="s2t"></h1><div class="sub" id="s2d"></div><div class="helpbox" id="helpbox"></div>
+<a href="./upute.jpg" target="_blank" rel="noopener" class="full" style="display:block"><button style="width:100%" id="openHelp" type="button"></button></a>
+<div class="actions"><button class="secondary" id="back2" onclick="prev()"></button><button id="next2" onclick="next()"></button></div>
 </section>
 
-<section id="s3" class="hidden">
-<h1 id="t3"></h1><p class="lead" id="d3"></p>
-<label id="branchLabel"></label><select id="branch"></select>
-<label id="contractLabel"></label><input id="contract" autocomplete="off">
-<div class="error" id="e3"></div>
-<div class="actions"><button class="secondary" id="b3" onclick="prev()"></button><button class="primary" id="n3" onclick="next()"></button></div>
+<section id="step3" class="hidden">
+<h1 id="s3t"></h1><div class="sub" id="s3d"></div>
+<label id="branchL"></label><select id="branch"></select>
+<label id="contractL"></label><input id="contract">
+<div class="status" id="step3err"></div>
+<div class="actions"><button class="secondary" id="back3" onclick="prev()"></button><button id="next3" onclick="next()"></button></div>
 </section>
 
-<section id="s4" class="hidden">
-<h1 id="t4"></h1><p class="lead" id="d4"></p>
-<label id="driverLabel"></label><select id="driver" onchange="toggleDriver()"></select>
-<div id="other" class="hidden">
-<label id="nameLabel"></label><input id="name">
-<label id="emailLabel"></label><input id="email" type="email">
-<label id="phoneLabel"></label><input id="phone" type="tel">
-<label id="licenseLabel"></label><input id="license" type="file" accept="image/*">
+<section id="step4" class="hidden">
+<h1 id="s4t"></h1><div class="sub" id="s4d"></div>
+<label id="driverL"></label><select id="driverType" onchange="toggleOtherDriver()"></select>
+<div id="otherDriver" class="hidden">
+<label id="driverNameL"></label><input id="driverName">
+<label id="driverEmailL"></label><input id="driverEmail" type="email">
+<label id="driverPhoneL"></label><input id="driverPhone" type="tel">
+<label id="licenseL"></label><input id="license" type="file" accept="image/*">
 </div>
-<div class="error" id="e4"></div>
-<div class="actions"><button class="secondary" id="b4" onclick="prev()"></button><button class="primary" id="n4" onclick="next()"></button></div>
+<div class="status" id="step4err"></div>
+<div class="actions"><button class="secondary" id="back4" onclick="prev()"></button><button id="next4" onclick="next()"></button></div>
 </section>
 
-<section id="s5" class="hidden">
-<h1 id="t5"></h1><p class="lead" id="d5"></p>
-<label id="dateLabel"></label><input id="date" type="date">
-<label id="descLabel"></label><textarea id="desc"></textarea>
-<label id="locLabel"></label><input id="loc">
-<button class="secondary" style="width:100%;margin-top:10px" id="gps" onclick="getGPS()" type="button"></button>
-<div class="error" id="gpsMsg"></div>
-<label id="photosLabel"></label><input id="photos" type="file" accept="image/*" multiple>
-<p class="lead" style="font-size:13px;margin:8px 0" id="photosHelp"></p>
-<div class="preview" id="preview"></div>
-<div class="error" id="e5"></div>
-<div class="actions"><button class="secondary" id="b5" onclick="prev()"></button><button class="primary" id="n5" onclick="next()"></button></div>
+<section id="step5" class="hidden">
+<h1 id="s5t"></h1><div class="sub" id="s5d"></div>
+<label id="dateL"></label><input id="date" type="date">
+<label id="descL"></label><textarea id="desc"></textarea>
+<label id="locL"></label><input id="location">
+<button class="full secondary" id="gpsBtn" onclick="getLocation()" type="button"></button>
+<div class="status" id="gps"></div>
+<label id="photosL"></label><input id="photos" type="file" accept="image/*" multiple>
+<div class="sub" id="photoHelp"></div><div class="photo-preview" id="preview"></div>
+<div class="status" id="step5err"></div>
+<div class="actions"><button class="secondary" id="back5" onclick="prev()"></button><button id="next5" onclick="next()"></button></div>
 </section>
 
-<section id="s6" class="hidden">
-<h1 id="t6"></h1><p class="lead" id="d6"></p><div class="review" id="review"></div>
-<div class="actions"><button class="secondary" id="b6" onclick="prev()"></button><button class="primary" id="send" onclick="finish()"></button></div>
+<section id="step6" class="hidden">
+<h1 id="s6t"></h1><div class="sub" id="s6d"></div><div class="summary" id="summary"></div>
+<div class="actions"><button class="secondary" id="back6" onclick="prev()"></button><button id="sendBtn" onclick="send()"></button></div>
 </section>
 
-<section id="s7" class="hidden">
-<div class="success"><div class="success-mark">✓</div><h1 id="t7"></h1><p class="lead" style="margin:auto" id="d7"></p></div>
+<section id="step7" class="hidden">
+<div class="success"><h1 id="s7t"></h1><div class="sub" id="s7d"></div></div>
 </section>
-
-</div></div>
+</div>
 
 <script>
-const T={
-hr:{brand:"Prijava štete na vozilu",step:"Korak",next:"Nastavi",back:"Natrag",req:"Molimo ispunite sva obavezna polja prije nastavka.",s1:"Odaberite jezik",d1:"Odaberite jezik na kojem želite ispuniti prijavu štete.",s2:"Kako postupiti?",d2:"Važne informacije prije prijave štete.",help:"U slučaju štete odmah kontaktirajte AVANT CAR poslovnicu i slijedite njihove upute.",open:"Otvori upute",s3:"Podaci o preuzimanju",d3:"Odaberite poslovnicu i unesite broj ugovora.",branch:"Poslovnica preuzimanja vozila",contract:"Broj ugovora",s4:"Vozač",d4:"Navedite tko je upravljao vozilom u trenutku štetnog događaja.",driver:"Tko je upravljao vozilom u trenutku štetnog događaja?",choose:"-- Odaberite --",main:"Glavni vozač",other:"Druga osoba",name:"Ime i prezime vozača",email:"Email",phone:"Broj telefona",license:"Fotografija vozačke dozvole",s5:"Podaci o šteti",d5:"Unesite detalje štete i dodajte fotografije.",date:"Datum štete",desc:"Opis štete",loc:"GPS lokacija",gps:"📍 Dohvati moju lokaciju",photos:"Fotografije štete",photosHelp:"Dodajte najmanje jednu fotografiju.",s6:"Pregled prijave",d6:"Provjerite podatke prije završetka.",send:"Završi testnu prijavu",s7:"TEST USPJEŠAN",d7:"Podaci nisu poslani niti spremljeni."},
-en:{brand:"Vehicle damage report",step:"Step",next:"Continue",back:"Back",req:"Please complete all required fields before continuing.",s1:"Select language",d1:"Select the language you want to use for the damage report.",s2:"How to proceed?",d2:"Important information before reporting damage.",help:"In case of damage, contact the AVANT CAR branch immediately and follow their instructions.",open:"Open instructions",s3:"Pick-up details",d3:"Select the branch and enter the contract number.",branch:"Vehicle pick-up branch",contract:"Contract number",s4:"Driver",d4:"Tell us who was driving the vehicle at the time of the damage.",driver:"Who was driving the vehicle at the time of the damage?",choose:"-- Select --",main:"Main driver",other:"Another person",name:"Driver full name",email:"Email",phone:"Phone number",license:"Driver's licence photo",s5:"Damage details",d5:"Enter the damage details and add photos.",date:"Date of damage",desc:"Damage description",loc:"GPS location",gps:"📍 Get my location",photos:"Damage photos",photosHelp:"Add at least one photo.",s6:"Review report",d6:"Check your information before finishing.",send:"Finish test report",s7:"TEST SUCCESSFUL",d7:"The data was not sent or stored."},
-de:{brand:"Fahrzeug-Schadensmeldung",step:"Schritt",next:"Weiter",back:"Zurück",req:"Bitte füllen Sie alle Pflichtfelder aus.",s1:"Sprache auswählen",d1:"Wählen Sie die Sprache für die Schadensmeldung.",s2:"Wie vorgehen?",d2:"Wichtige Informationen vor der Schadensmeldung.",help:"Bei einem Schaden kontaktieren Sie sofort die AVANT CAR Station und befolgen Sie deren Anweisungen.",open:"Anleitung öffnen",s3:"Abholdaten",d3:"Wählen Sie die Station und geben Sie die Vertragsnummer ein.",branch:"Abholstation",contract:"Vertragsnummer",s4:"Fahrer",d4:"Geben Sie an, wer das Fahrzeug zum Zeitpunkt des Schadens gefahren hat.",driver:"Wer hat das Fahrzeug zum Zeitpunkt des Schadens gefahren?",choose:"-- Auswählen --",main:"Hauptfahrer",other:"Andere Person",name:"Vor- und Nachname des Fahrers",email:"E-Mail",phone:"Telefonnummer",license:"Foto des Führerscheins",s5:"Schadendetails",d5:"Geben Sie die Schadendetails ein und fügen Sie Fotos hinzu.",date:"Schadendatum",desc:"Schadensbeschreibung",loc:"GPS-Standort",gps:"📍 Standort abrufen",photos:"Schadenfotos",photosHelp:"Mindestens ein Foto hinzufügen.",s6:"Meldung prüfen",d6:"Überprüfen Sie Ihre Angaben vor dem Abschluss.",send:"Testmeldung abschließen",s7:"TEST ERFOLGREICH",d7:"Die Daten wurden nicht gesendet oder gespeichert."},
-it:{brand:"Segnalazione danni al veicolo",step:"Passaggio",next:"Continua",back:"Indietro",req:"Compila tutti i campi obbligatori prima di continuare.",s1:"Seleziona lingua",d1:"Seleziona la lingua per compilare la segnalazione.",s2:"Come procedere?",d2:"Informazioni importanti prima della segnalazione.",help:"In caso di danno, contatta immediatamente la filiale AVANT CAR e segui le istruzioni.",open:"Apri istruzioni",s3:"Dati del ritiro",d3:"Seleziona la filiale e inserisci il numero di contratto.",branch:"Filiale di ritiro",contract:"Numero contratto",s4:"Conducente",d4:"Indica chi guidava il veicolo al momento del danno.",driver:"Chi guidava il veicolo al momento del danno?",choose:"-- Seleziona --",main:"Conducente principale",other:"Un'altra persona",name:"Nome e cognome del conducente",email:"Email",phone:"Numero di telefono",license:"Foto della patente",s5:"Dettagli del danno",d5:"Inserisci i dettagli del danno e aggiungi le foto.",date:"Data del danno",desc:"Descrizione del danno",loc:"Posizione GPS",gps:"📍 Ottieni posizione",photos:"Foto del danno",photosHelp:"Aggiungi almeno una foto.",s6:"Riepilogo",d6:"Controlla i dati prima di terminare.",send:"Completa segnalazione di test",s7:"TEST RIUSCITO",d7:"I dati non sono stati inviati né salvati."},
-fr:{brand:"Déclaration de dommages du véhicule",step:"Étape",next:"Continuer",back:"Retour",req:"Veuillez remplir tous les champs obligatoires.",s1:"Choisir la langue",d1:"Choisissez la langue pour remplir la déclaration.",s2:"Comment procéder ?",d2:"Informations importantes avant la déclaration.",help:"En cas de dommage, contactez immédiatement l'agence AVANT CAR et suivez ses instructions.",open:"Ouvrir les instructions",s3:"Informations de prise en charge",d3:"Sélectionnez l'agence et saisissez le numéro de contrat.",branch:"Agence de prise en charge",contract:"Numéro de contrat",s4:"Conducteur",d4:"Indiquez qui conduisait le véhicule au moment du dommage.",driver:"Qui conduisait le véhicule au moment du dommage ?",choose:"-- Sélectionner --",main:"Conducteur principal",other:"Une autre personne",name:"Nom et prénom du conducteur",email:"E-mail",phone:"Numéro de téléphone",license:"Photo du permis de conduire",s5:"Détails du dommage",d5:"Décrivez le dommage et ajoutez des photos.",date:"Date du dommage",desc:"Description du dommage",loc:"Position GPS",gps:"📍 Obtenir ma position",photos:"Photos du dommage",photosHelp:"Ajoutez au moins une photo.",s6:"Vérifier la déclaration",d6:"Vérifiez vos informations avant de terminer.",send:"Terminer la déclaration de test",s7:"TEST RÉUSSI",d7:"Les données n'ont pas été envoyées ni enregistrées."}
+const branches={
+hr:["Zagreb Aerodrom","Zagreb Downtown","Zadar Aerodrom","Split Aerodrom","Split Downtown","Dubrovnik Aerodrom","Dubrovnik Downtown"],
+en:["Zagreb Airport","Zagreb Downtown","Zadar Airport","Split Airport","Split Downtown","Dubrovnik Airport","Dubrovnik Downtown"],
+de:["Flughafen Zagreb","Zagreb Innenstadt","Flughafen Zadar","Flughafen Split","Split Innenstadt","Flughafen Dubrovnik","Dubrovnik Innenstadt"],
+it:["Aeroporto di Zagabria","Zagabria Centro","Aeroporto di Zara","Aeroporto di Spalato","Spalato Centro","Aeroporto di Dubrovnik","Dubrovnik Centro"],
+fr:["Aéroport de Zagreb","Zagreb Centre","Aéroport de Zadar","Aéroport de Split","Split Centre","Aéroport de Dubrovnik","Dubrovnik Centre"]
 };
-const B={hr:["Zagreb Aerodrom","Zagreb Downtown","Zadar Aerodrom","Split Aerodrom","Split Downtown","Dubrovnik Aerodrom","Dubrovnik Downtown"],en:["Zagreb Airport","Zagreb Downtown","Zadar Airport","Split Airport","Split Downtown","Dubrovnik Airport","Dubrovnik Downtown"],de:["Flughafen Zagreb","Zagreb Innenstadt","Flughafen Zadar","Flughafen Split","Split Innenstadt","Flughafen Dubrovnik","Dubrovnik Innenstadt"],it:["Aeroporto di Zagabria","Zagabria Centro","Aeroporto di Zara","Aeroporto di Spalato","Spalato Centro","Aeroporto di Dubrovnik","Dubrovnik Centro"],fr:["Aéroport de Zagreb","Zagreb Centre","Aéroport de Zadar","Aéroport de Split","Split Centre","Aéroport de Dubrovnik","Dubrovnik Centre"]};
-let lang="hr",step=1;
-const $=x=>document.getElementById(x);
+
+const D={
+hr:{step:"Korak",of:"od",next:"Nastavi",back:"Natrag",req:"Molimo ispunite sva obavezna polja prije nastavka.",s1t:"Odaberite jezik",s1d:"Odaberite jezik na kojem želite ispuniti prijavu.",s2t:"Kako postupiti?",s2d:"Važne informacije prije podnošenja prijave štete.",open:"Otvori upute",help:"U slučaju štete odmah kontaktirajte AVANT CAR poslovnicu i slijedite njihove upute.",branch:"Poslovnica preuzimanja vozila",contract:"Broj ugovora",s3t:"Podaci o preuzimanju",s3d:"Odaberite poslovnicu i unesite broj ugovora.",s4t:"Vozač",s4d:"Navedite tko je upravljao vozilom u trenutku štetnog događaja.",driver:"Tko je upravljao vozilom u trenutku štetnog događaja?",choose:"-- Odaberite --",main:"Glavni vozač",other:"Druga osoba",name:"Ime i prezime vozača",email:"Email",phone:"Broj telefona",license:"Fotografija vozačke dozvole",s5t:"Podaci o šteti",s5d:"Unesite detalje štete i dodajte fotografije.",date:"Datum štete",desc:"Opis štete",loc:"GPS lokacija",gps:"📍 Dohvati moju lokaciju",photos:"Fotografije štete",photoHelp:"Dodajte najmanje jednu fotografiju.",s6t:"Pregled prijave",s6d:"Provjerite podatke prije završetka.",send:"Završi testnu prijavu",s7t:"✓ TEST USPJEŠAN",s7d:"Podaci nisu poslani niti spremljeni."},
+en:{step:"Step",of:"of",next:"Continue",back:"Back",req:"Please complete all required fields before continuing.",s1t:"Select language",s1d:"Select the language you want to use for the report.",s2t:"How to proceed?",s2d:"Important information before submitting a damage report.",open:"Open instructions",help:"In case of damage, contact the AVANT CAR branch immediately and follow their instructions.",branch:"Vehicle pick-up branch",contract:"Contract number",s3t:"Pick-up details",s3d:"Select the branch and enter the contract number.",s4t:"Driver",s4d:"Tell us who was driving the vehicle at the time of the damage.",driver:"Who was driving the vehicle at the time of the damage?",choose:"-- Select --",main:"Main driver",other:"Another person",name:"Driver full name",email:"Email",phone:"Phone number",license:"Driver's licence photo",s5t:"Damage details",s5d:"Enter the damage details and add photos.",date:"Date of damage",desc:"Damage description",loc:"GPS location",gps:"📍 Get my location",photos:"Damage photos",photoHelp:"Add at least one photo.",s6t:"Review report",s6d:"Check your information before finishing.",send:"Finish test report",s7t:"✓ TEST SUCCESSFUL",s7d:"The data was not sent or stored."},
+de:{step:"Schritt",of:"von",next:"Weiter",back:"Zurück",req:"Bitte füllen Sie alle Pflichtfelder aus.",s1t:"Sprache auswählen",s1d:"Wählen Sie die Sprache für die Meldung.",s2t:"Wie vorgehen?",s2d:"Wichtige Informationen vor der Schadensmeldung.",open:"Anleitung öffnen",help:"Bei einem Schaden kontaktieren Sie sofort die AVANT CAR Station und befolgen Sie deren Anweisungen.",branch:"Abholstation",contract:"Vertragsnummer",s3t:"Abholdaten",s3d:"Wählen Sie die Station und geben Sie die Vertragsnummer ein.",s4t:"Fahrer",s4d:"Geben Sie an, wer das Fahrzeug zum Zeitpunkt des Schadens gefahren hat.",driver:"Wer hat das Fahrzeug zum Zeitpunkt des Schadens gefahren?",choose:"-- Auswählen --",main:"Hauptfahrer",other:"Andere Person",name:"Vor- und Nachname des Fahrers",email:"E-Mail",phone:"Telefonnummer",license:"Foto des Führerscheins",s5t:"Schadendetails",s5d:"Geben Sie die Schadendetails ein und fügen Sie Fotos hinzu.",date:"Schadendatum",desc:"Schadensbeschreibung",loc:"GPS-Standort",gps:"📍 Standort abrufen",photos:"Schadenfotos",photoHelp:"Mindestens ein Foto hinzufügen.",s6t:"Meldung prüfen",s6d:"Überprüfen Sie Ihre Angaben vor dem Abschluss.",send:"Testmeldung abschließen",s7t:"✓ TEST ERFOLGREICH",s7d:"Die Daten wurden nicht gesendet oder gespeichert."},
+it:{step:"Passaggio",of:"di",next:"Continua",back:"Indietro",req:"Compila tutti i campi obbligatori prima di continuare.",s1t:"Seleziona lingua",s1d:"Seleziona la lingua per compilare la segnalazione.",s2t:"Come procedere?",s2d:"Informazioni importanti prima di inviare la segnalazione.",open:"Apri istruzioni",help:"In caso di danno, contatta immediatamente la filiale AVANT CAR e segui le istruzioni.",branch:"Filiale di ritiro",contract:"Numero contratto",s3t:"Dati del ritiro",s3d:"Seleziona la filiale e inserisci il numero di contratto.",s4t:"Conducente",s4d:"Indica chi guidava il veicolo al momento del danno.",driver:"Chi guidava il veicolo al momento del danno?",choose:"-- Seleziona --",main:"Conducente principale",other:"Un'altra persona",name:"Nome e cognome del conducente",email:"Email",phone:"Numero di telefono",license:"Foto della patente",s5t:"Dettagli del danno",s5d:"Inserisci i dettagli del danno e aggiungi le foto.",date:"Data del danno",desc:"Descrizione del danno",loc:"Posizione GPS",gps:"📍 Ottieni posizione",photos:"Foto del danno",photoHelp:"Aggiungi almeno una foto.",s6t:"Riepilogo",s6d:"Controlla i dati prima di terminare.",send:"Completa segnalazione di test",s7t:"✓ TEST RIUSCITO",s7d:"I dati non sono stati inviati né salvati."},
+fr:{step:"Étape",of:"sur",next:"Continuer",back:"Retour",req:"Veuillez remplir tous les champs obligatoires.",s1t:"Choisir la langue",s1d:"Choisissez la langue pour remplir la déclaration.",s2t:"Comment procéder ?",s2d:"Informations importantes avant d'envoyer la déclaration.",open:"Ouvrir les instructions",help:"En cas de dommage, contactez immédiatement l'agence AVANT CAR et suivez ses instructions.",branch:"Agence de prise en charge",contract:"Numéro de contrat",s3t:"Informations de prise en charge",s3d:"Sélectionnez l'agence et saisissez le numéro de contrat.",s4t:"Conducteur",s4d:"Indiquez qui conduisait le véhicule au moment du dommage.",driver:"Qui conduisait le véhicule au moment du dommage ?",choose:"-- Sélectionner --",main:"Conducteur principal",other:"Une autre personne",name:"Nom et prénom du conducteur",email:"E-mail",phone:"Numéro de téléphone",license:"Photo du permis de conduire",s5t:"Détails du dommage",s5d:"Décrivez le dommage et ajoutez des photos.",date:"Date du dommage",desc:"Description du dommage",loc:"Position GPS",gps:"📍 Obtenir ma position",photos:"Photos du dommage",photoHelp:"Ajoutez au moins une photo.",s6t:"Vérifier la déclaration",s6d:"Vérifiez vos informations avant de terminer.",send:"Terminer la déclaration de test",s7t:"✓ TEST RÉUSSI",s7d:"Les données n'ont pas été envoyées ni enregistrées."}
+};
+
+let lang="hr",current=1;
+const $=id=>document.getElementById(id);
+
 function setLang(l){
- lang=l;let t=T[l];document.documentElement.lang=l;$("brandSub").textContent=t.brand;$("stepText").textContent=t.step;
- $("t1").textContent=t.s1;$("d1").textContent=t.d1;$("n1").textContent=t.next;
- $("t2").textContent=t.s2;$("d2").textContent=t.d2;$("help").textContent=t.help;$("open").textContent=t.open;
- $("t3").textContent=t.s3;$("d3").textContent=t.d3;$("branchLabel").textContent=t.branch;$("contractLabel").textContent=t.contract;
- $("t4").textContent=t.s4;$("d4").textContent=t.d4;$("driverLabel").textContent=t.driver;$("nameLabel").textContent=t.name;$("emailLabel").textContent=t.email;$("phoneLabel").textContent=t.phone;$("licenseLabel").textContent=t.license;
- $("t5").textContent=t.s5;$("d5").textContent=t.d5;$("dateLabel").textContent=t.date;$("descLabel").textContent=t.desc;$("locLabel").textContent=t.loc;$("gps").textContent=t.gps;$("photosLabel").textContent=t.photos;$("photosHelp").textContent=t.photosHelp;
- $("t6").textContent=t.s6;$("d6").textContent=t.d6;$("send").textContent=t.send;$("t7").textContent=t.s7;$("d7").textContent=t.d7;
- ["2","3","4","5","6"].forEach(n=>{$("b"+n).textContent=t.back;$("n"+n).textContent=t.next});
- $("branch").innerHTML=B[l].map(x=>`<option>${x}</option>`).join("");
- $("driver").innerHTML=`<option value="">${t.choose}</option><option value="main">${t.main}</option><option value="other">${t.other}</option>`;
- ["hr","en","de","it","fr"].forEach(x=>$("l"+({hr:"h",en:"e",de:"d",it:"i",fr:"f"}[x])).classList.toggle("active",x===l));
+ lang=l;
+ document.documentElement.lang=l;
+ const t=D[l]; $("brandSub").textContent={hr:"Prijava štete na vozilu",en:"Vehicle damage report",de:"Fahrzeug-Schadensmeldung",it:"Segnalazione danni al veicolo",fr:"Déclaration de dommages du véhicule"}[l];
+ $("stepLabel").textContent=t.step;$("of").textContent=t.of;
+ $("s1t").textContent=t.s1t;$("s1d").textContent=t.s1d;$("next1").textContent=t.next;
+ $("s2t").textContent=t.s2t;$("s2d").textContent=t.s2d;$("helpbox").textContent=t.help;$("openHelp").textContent=t.open;
+ $("s3t").textContent=t.s3t;$("s3d").textContent=t.s3d;$("branchL").textContent=t.branch;$("contractL").textContent=t.contract;
+ $("s4t").textContent=t.s4t;$("s4d").textContent=t.s4d;$("driverL").textContent=t.driver;$("driverNameL").textContent=t.name;$("driverEmailL").textContent=t.email;$("driverPhoneL").textContent=t.phone;$("licenseL").textContent=t.license;
+ $("s5t").textContent=t.s5t;$("s5d").textContent=t.s5d;$("dateL").textContent=t.date;$("descL").textContent=t.desc;$("locL").textContent=t.loc;$("gpsBtn").textContent=t.gps;$("photosL").textContent=t.photos;$("photoHelp").textContent=t.photoHelp;
+ $("s6t").textContent=t.s6t;$("s6d").textContent=t.s6d;$("sendBtn").textContent=t.send;$("s7t").textContent=t.s7t;$("s7d").textContent=t.s7d;
+ ["2","3","4","5","6"].forEach(n=>{if($("back"+n))$("back"+n).textContent=t.back;if($("next"+n))$("next"+n).textContent=t.next});
+ $("branch").innerHTML=branches[l].map(x=>`<option>${x}</option>`).join("");
+ $("driverType").innerHTML=`<option value="">${t.choose}</option><option value="main">${t.main}</option><option value="other">${t.other}</option>`;
+ ["hr","en","de","it","fr"].forEach(x=>$("lang-"+x).classList.toggle("active",x===l));
  update();
 }
+
 function update(){
- for(let i=1;i<=7;i++)$("s"+i).classList.toggle("hidden",i!==step);
- $("stepNo").textContent=step;$("fill").style.width=(step/7*100)+"%";
- if(step===6)review();
+ for(let i=1;i<=7;i++)$("step"+i).classList.toggle("hidden",i!==current);
+ $("num").textContent=current;$("fill").style.width=(current/7*100)+"%";
+ if(current===6)buildSummary();
 }
-function fail(id){$(id).textContent="⚠️ "+T[lang].req;return false}
-function valid(){
- if(step===3&&!$("contract").value.trim())return fail("e3");
- if(step===4){
-  if(!$("driver").value)return fail("e4");
-  if($("driver").value==="other"&&(!$("name").value.trim()||!$("email").value.trim()||!$("phone").value.trim()||!$("license").files.length))return fail("e4");
+
+function error(id){$(id).textContent="⚠️ "+D[lang].req;return false}
+function validate(){
+ if(current===1)return true;
+ if(current===3){
+  if(!$("contract").value.trim())return error("step3err");
  }
- if(step===5&&!($("date").value&&$("desc").value.trim()&&$("loc").value.trim()&&$("photos").files.length))return fail("e5");
+ if(current===4){
+  if(!$("driverType").value)return error("step4err");
+  if($("driverType").value==="other" &&
+    (!$("driverName").value.trim()||!$("driverEmail").value.trim()||!$("driverPhone").value.trim()||!$("license").files.length))
+    return error("step4err");
+ }
+ if(current===5){
+  if(!$("date").value||!$("desc").value.trim()||!$("location").value.trim()||!$("photos").files.length)return error("step5err");
+ }
  return true;
 }
-function next(){if(valid()&&step<7){step++;update()}}
-function prev(){if(step>1){step--;update()}}
-function toggleDriver(){$("other").classList.toggle("hidden",$("driver").value!=="other");$("e4").textContent=""}
-function getGPS(){
- if(!navigator.geolocation){$("gpsMsg").textContent="GPS nije podržan.";return}
- navigator.geolocation.getCurrentPosition(p=>{$("loc").value=p.coords.latitude.toFixed(6)+", "+p.coords.longitude.toFixed(6);$("gpsMsg").textContent="✓"},()=>{$("gpsMsg").textContent="⚠️"})
+function next(){if(!validate())return;if(current<7){current++;update()}}
+function prev(){if(current>1){current--;update()}}
+function toggleOtherDriver(){$("otherDriver").classList.toggle("hidden",$("driverType").value!=="other");$("step4err").textContent=""}
+function getLocation(){
+ if(!navigator.geolocation){$("gps").textContent="GPS nije podržan.";return}
+ navigator.geolocation.getCurrentPosition(p=>{
+  $("location").value=p.coords.latitude.toFixed(6)+", "+p.coords.longitude.toFixed(6);
+  $("gps").textContent="✓";
+ },()=>{$("gps").textContent="⚠️"})
 }
 $("photos").addEventListener("change",function(){
  $("preview").innerHTML="";
- [...this.files].forEach(f=>{let r=new FileReader();r.onload=e=>{let i=document.createElement("img");i.src=e.target.result;$("preview").appendChild(i)};r.readAsDataURL(f)})
+ [...this.files].forEach(f=>{const r=new FileReader();r.onload=e=>{const img=document.createElement("img");img.src=e.target.result;$("preview").appendChild(img)};r.readAsDataURL(f)})
 });
-function review(){
- let t=T[lang],drv=$("driver").value==="other"?$("name").value:t.main;
- $("review").innerHTML=[[t.branch,$("branch").value],[t.contract,$("contract").value],[t.driver,drv],[t.date,$("date").value],[t.loc,$("loc").value],[t.desc,$("desc").value],[t.photos,$("photos").files.length]].map(a=>`<div><strong>${a[0]}</strong>${String(a[1]).replace(/</g,"&lt;")}</div>`).join("");
+function buildSummary(){
+ const t=D[lang],driver=$("driverType").value==="other"?$("driverName").value:t.main;
+ $("summary").innerHTML=[
+  [t.branch,$("branch").value],[t.contract,$("contract").value],[t.driver,driver],
+  [t.date,$("date").value],[t.loc,$("location").value],[t.desc,$("desc").value],
+  [t.photos,$("photos").files.length]
+ ].map(x=>`<div><b>${x[0]}</b>${String(x[1]).replace(/</g,"&lt;")}</div>`).join("");
 }
-function finish(){step=7;update()}
-function openInstructions(){
-  // Directly open the image from the same GitHub Pages folder.
-  window.open("./upute.jpg","_blank","noopener");
-}
+function send(){current=7;update()}
 setLang("hr");
 </script>
 </body>
